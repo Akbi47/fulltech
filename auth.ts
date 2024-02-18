@@ -47,7 +47,7 @@ export const {
         let existingUser;
         try {
           existingUser = await UserService.getUserDataByEmail(user.email);
-          console.log({userId: user.id});
+          console.log({existingUser: existingUser});
           
           const existingAccount = await AccountService.getAccountDataByProviderId(user.id);
           console.log({existingAccount});

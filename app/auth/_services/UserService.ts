@@ -14,9 +14,9 @@ class UserService extends BaseService {
   async getUserDataById(userId: string) {
     return await this.performRequest(METHODS.GET, `user/${userId}`);
   }
-  async getUserDataByEmail(email: unknown) {
-    const result = await this.performRequest(METHODS.GET, `user/email/search/${email}`);
-    console.log({result});
+  async getUserDataByEmail(email: string) {
+    const result = await this.performRequest(METHODS.GET, `user/email/search`, {email});
+    console.log({resultTest5: result});
     
     return result;
   }

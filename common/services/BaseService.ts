@@ -5,6 +5,7 @@ export enum METHODS {
   POST = "POST",
   DELETE = "DELETE",
   PUT = "PUT",
+  PATCH = "PATCH",
 }
 
 export default class BaseService {
@@ -19,7 +20,7 @@ export default class BaseService {
     data: any = {},
     headers = {},
     responseType?: string
-  ): Promise<T|any> {
+  ): Promise<T | any> {
     const endPoint = this.prefix + (url ? `/${url}` : "");
     const options: any = {
       method,
